@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../../services/pokemon.service';
+import { PokemonService } from '../../services/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -20,12 +20,14 @@ export class PokemonsComponent implements OnInit {
   	}
 
 	getPokemon(){
+		console.log("Estou aqui")
   		this.nextId++;
     	this.pkmnService.getPokemon(this.nextId)
     	.subscribe(
     		(res)=>{
           		this.pokemons.push(res); 
           		console.log(res);
+          		console.log(this.pokemons[0].name)
         	}
       	)
   	}

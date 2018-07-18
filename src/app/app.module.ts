@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; //Importar para a service funcionar
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterializeModule } from 'angular2-materialize';
@@ -9,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BerriesComponent } from './pages/berries/berries.component';
 
 import { AppRoutingModule } from './app.routing.module'
+import { PokemonService } from './services/pokemon/pokemon.service';
 
 
 
@@ -24,9 +27,12 @@ import { AppRoutingModule } from './app.routing.module'
   imports: [
     BrowserModule,
     MaterializeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule //Importar para a service funcionar
   ],
-  providers: [],
+  providers: [
+    PokemonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

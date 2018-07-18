@@ -9,7 +9,7 @@ export class PokemonService {
   pokeApiUrl = 'https://pokeapi.co/api/v2/';
 
   constructor(public http: HttpClient) {
-    console.log('Hello PokemonProvider Provider');
+    console.log('Hello Pokemon Service');
   }
 
   getPokemon(id):Observable<any>{

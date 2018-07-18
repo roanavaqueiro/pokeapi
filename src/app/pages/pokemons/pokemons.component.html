@@ -1,4 +1,20 @@
-<app-navbar></app-navbar>
-<p>
-  pokemons works!
-</p>
+<html>
+	<head>
+
+	</head>
+
+	<app-navbar></app-navbar>
+	
+	<body>
+		<a class="waves-effect waves-light btn" (click)="getPokemon()">Clique em mim</a>
+		
+		<ul class="collection" *ngFor="let pokemon of pokemons">
+			<li> {{pokemon.name}} </li>
+			<img src="{{p.sprites.front_shiny}}">
+
+		</ul>
+	</body>
+
+</html>
+
+
