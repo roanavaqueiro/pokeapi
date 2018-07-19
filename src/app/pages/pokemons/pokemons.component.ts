@@ -9,10 +9,10 @@ import { PokemonService } from '../../services/pokemon/pokemon.service';
 export class PokemonsComponent implements OnInit {
 
 	pokemons = []; //array que irá guardar todos os dados do Pokemon do id em questão
-	nextId: number; //Variável que irá guardar o id do Pokemon que estamos buscando
+	id: number; //Variável que irá guardar o id do Pokemon que estamos buscando
 
   	constructor(public pkmnService: PokemonService) { 
-  		this.nextId = 0;
+  		this.id = 0;
   	}
 
   	ngOnInit() {
@@ -20,14 +20,13 @@ export class PokemonsComponent implements OnInit {
   	}
 
 	getPokemon(){
-		console.log("Estou aqui")
-  		this.nextId++;
-    	this.pkmnService.getPokemon(this.nextId)
+		console.log("Entrei na função")
+  		this.id++;
+    	this.pkmnService.getPokemon(this.id)
     	.subscribe(
     		(res)=>{
           		this.pokemons.push(res); 
           		console.log(res);
-          		console.log(this.pokemons[0].name)
         	}
       	)
   	}

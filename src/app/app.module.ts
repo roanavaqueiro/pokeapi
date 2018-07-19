@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; //Importar para a service funcionar
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,9 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { BerriesComponent } from './pages/berries/berries.component';
 
 import { AppRoutingModule } from './app.routing.module'
-import { PokemonService } from './services/pokemon/pokemon.service';
 
-
+import { HttpClientModule } from '@angular/common/http'; //Importar para a service funcionar
+import { PokemonService } from './services/pokemon/pokemon.service'; //Importar para a Service funcionar
 
 @NgModule({
   declarations: [
