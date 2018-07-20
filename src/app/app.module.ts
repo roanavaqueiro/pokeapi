@@ -12,7 +12,7 @@ import { BerriesComponent } from './pages/berries/berries.component';
 import { AppRoutingModule } from './app.routing.module'
 
 import { HttpClientModule } from '@angular/common/http';
-import { PokemonService } from './services/pokemon.service';
+import { PokemonService } from './services/pokemon/pokemon.service';
 
 
 
