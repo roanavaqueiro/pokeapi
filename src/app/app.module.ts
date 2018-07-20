@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterializeModule } from 'angular2-materialize';
@@ -26,12 +27,12 @@ import { PokemonService } from './services/pokemon.service';
   ],
   imports: [
     BrowserModule,
-    MaterializeModule, 
+    MaterializeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule //Importar para a service funcionar
   ],
   providers: [
-  PokemonService
+    PokemonService
   ],
   bootstrap: [AppComponent]
 

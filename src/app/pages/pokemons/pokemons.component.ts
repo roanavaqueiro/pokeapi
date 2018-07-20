@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../../services/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonsComponent implements OnInit {
 
-  constructor() { }
+	pokemons = []; //array que irá guardar todos os dados do Pokemon do id em questão
+	id: number; //Variável que irá guardar o id do Pokemon que estamos buscando
 
-  ngOnInit() {
-  }
+  	constructor(public pkmnService: PokemonService) { 
+  		this.id = 0;
+  	}
 
+  	ngOnInit() {
+
+  	}
+
+	getPokemon(){
+		console.log("Entrei na função")
+  		this.id++;
+    	this.pkmnService.getPokemon(this.id)
+    	.subscribe(
+    		(res)=>{
+          		this.pokemons.push(res); 
+          		console.log(res);
+        	}
+      	)
+  	}
 }
