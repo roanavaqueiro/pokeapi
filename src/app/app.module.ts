@@ -10,6 +10,9 @@ import { BerriesComponent } from './pages/berries/berries.component';
 
 import { AppRoutingModule } from './app.routing.module'
 
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonService } from './services/pokemon.service';
+
 
 
 @NgModule({
@@ -23,10 +26,14 @@ import { AppRoutingModule } from './app.routing.module'
   ],
   imports: [
     BrowserModule,
-    MaterializeModule,
-    AppRoutingModule
+    MaterializeModule, 
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  PokemonService
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
